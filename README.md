@@ -109,3 +109,43 @@ SET UP Tailwind into our APP - https://tailwindcss.com/docs/guides/create-react-
     create configuration - createBrowserRouter
     Provider configuration to router - RouterProvider
     use useRouteError and show error , Outlet, Link from react-router-dom
+
+- LoginForm - form html, useFormValidation - validate function
+- Validation for form in util checkValidData - useref to take email and password value for validation and pass to checkValidData and display error message
+
+# Authentication
+
+- we need backend - we can use google firebase
+
+- create Project - use analytics - create Project
+- choose web and firebase hosting
+
+Install fire base
+
+> npm install firebase
+
+- create configuration for firebase add it in utils
+
+- Go to build -> authentication ->choose email/password -> enable email/password
+
+  > npm install -g firebase-tools
+  > firebase login
+  > firebase init
+
+  - firebase.json and firebase.rc file is created
+
+  > firebase deploy
+
+https://netflixgpt-8ded7.web.app/
+
+- In the util add firebase.js configuration take it from firebase
+- Create a password-based account - createUserWithEmailAndPassword // This will create and store user information in firebase
+- Sign in a user with an email address and password - signInWithEmailAndPassword
+
+now user information will be stored successfully and login will also be successful.
+
+---
+
+- To set up Redux Store
+  > npm i -D @reduxjs/toolkit
+  > npm i react-redux
