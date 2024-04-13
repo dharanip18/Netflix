@@ -155,3 +155,5 @@ appStore and userslice js
 - onAuthStateChanged api
 - updatProfile api
 - SignOut api
+
+browse should be accessed only after sign in - redirect to login is not signed in

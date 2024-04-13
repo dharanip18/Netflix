@@ -6,16 +6,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 const LoginForm = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const name = useRef(null);
   const email = useRef(null); //email ref
   const password = useRef(null); //password ref
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -37,7 +36,7 @@ const LoginForm = () => {
           console.log(user);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/51851865?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -50,7 +49,6 @@ const LoginForm = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -75,7 +73,6 @@ const LoginForm = () => {
           const user = userCredential.user;
           // ...
           console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -91,7 +88,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="mt-12">
+    <div className="pt-24">
       <form
         className="w-96 m-auto p-12 bg-black text-white rounded-md bg-opacity-85"
         onSubmit={(e) => e.preventDefault()}
