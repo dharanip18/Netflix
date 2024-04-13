@@ -149,3 +149,9 @@ now user information will be stored successfully and login will also be successf
 - To set up Redux Store
   > npm i -D @reduxjs/toolkit
   > npm i react-redux
+
+appStore and userslice js
+
+- onAuthStateChanged api
+- updatProfile api
+- SignOut api
